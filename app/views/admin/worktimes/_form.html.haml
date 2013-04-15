@@ -1,0 +1,31 @@
+= form_for [:admin, @worktime], :html => {:class => "form-horizontal"} do |f|
+  .control-group
+    %label.control-label Доктора
+    .controls
+      = f.select :doctor_ids, options_for_select(Doctor.all.map{|s| [s.fio, s.id]}, @worktime.doctors.pluck(:id))
+
+  .control-group
+    %label.control-label Дата
+    .controls
+      = f.date_select :date
+
+  .control-group
+    %label.control-label Начало рабочего дня
+    .controls
+      = f.time_select :start_day
+
+  .control-group
+    %label.control-label Окончание рабочего дня
+    .controls
+      = f.time_select  :end_day
+
+  .control-group
+    %label.control-label Длительность приема
+    .controls
+      = f.text_field :duration
+
+
+  .form-actions
+    %input.btn.btn-success{:name => "save", :type => "submit", :value => "Сохранить"}
+    %input.btn.btn-primary{:name => "apply",:type => "submit", :value => "Применить"}
+    = link_to "назад",admin_worktimes_path, :class => "btn"

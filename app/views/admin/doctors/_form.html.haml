@@ -1,0 +1,36 @@
+= form_for [:admin, @doctor], :html => {:class => "form-horizontal"} do |f|
+
+  .control-group
+    %label.control-label ФИО
+    .controls
+      = f.text_field :fio
+
+  .control-group
+    %label.control-label Специализация
+    .controls
+      = f.select :speciality_id, options_for_select(Speciality.all.map{|s| [s.name, s.id]}, @doctor.speciality_id)
+
+  -#%select{name: "doctor[specialty_id]"}
+    -Speciality.all.each do |s|
+      %option{value: s.id, selected: s.id == @doctor.speciality_id}= s.name
+
+  .control-group
+    %label.control-label Дополнительно описание
+    .controls
+      = f.text_area :description, :style => "width:100%"
+
+  .control-group
+    %label.control-label
+    .controls
+      =f.file_field :photo
+
+  .control-group
+    %label.control-label
+    .controls
+      =image_tag @doctor.photo.url
+
+  .form-actions
+    %input.btn.btn-success{:name => "save", :type => "submit", :value => "Сохранить"}
+    = link_to "назад",admin_doctors_path, :class => "btn"
+
+

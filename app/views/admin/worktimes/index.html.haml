@@ -1,0 +1,18 @@
+%table.table
+  %tr
+    %th #
+    %th Время начала рабочего дня
+    %th Время окончания рабочего дня
+    %th Длительность приема
+    %th Удалить
+  - @worktimes.each do |w|
+    %tr
+      %td
+        %a{href: "/admin/worktimes/#{w.id}"}=w.id
+      %td= w.start_day.strftime("%H:%M")
+      %td= w.end_day.strftime("%H:%M")
+      %td= w.duration
+      %td
+        =link_to "Удалить", admin_worktime_path(w), :method => :delete, :class => "btn btn-danger", :confirm => "Вы уверены?"
+
+%a.btn{href: "/admin/worktimes/new"} Добавить

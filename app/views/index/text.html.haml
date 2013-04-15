@@ -1,0 +1,80 @@
+.cont_bl
+  .span_100.no-bg.cont_padding
+    .span_70.info_page_670.info_text
+      %h2.block_name Случайная статья
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta modi debitis assumenda eveniet suscipit ad nemo aperiam enim iste? Accusantium voluptates velit exercitationem quaerat veritatis excepturi ipsam neque temporibus.
+      %p Consequuntur voluptatem cum minus enim consectetur nemo sunt laborum architecto distinctio neque natus a blanditiis! Exercitationem quos blanditiis deleniti rerum magni dolorum non quasi nostrum accusantium vero. Ut rerum nihil?
+      %p Quam quos at magnam voluptatem delectus provident maiores ipsam quod nobis et ex quisquam illo voluptatibus velit veniam. Impedit maxime non quibusdam itaque unde repellendus sit accusantium porro iure odio!
+      %p Tempore in optio porro fugiat? Perspiciatis eos odit porro in vitae soluta? Illum aut molestiae numquam corporis cupiditate ea assumenda culpa cumque iure sed quibusdam officiis eos necessitatibus quis maxime.
+      %p Vel explicabo ipsa vero eligendi culpa adipisci rem ratione dicta eaque iusto consectetur cum! Commodi facere similique autem fugiat ad itaque illo. Sapiente labore nulla similique consectetur architecto voluptas ea.
+      %p Laboriosam omnis amet sequi vel quidem error fuga quisquam ab aut placeat maxime odio magni quo distinctio a eligendi excepturi deleniti porro reprehenderit nostrum nemo laborum deserunt odit similique at.
+      %p Officiis dolorum dolor quos libero culpa esse rerum quo alias similique laboriosam officia ratione eveniet unde. Reiciendis amet laudantium quisquam mollitia rem quae ea quod soluta recusandae labore. Perferendis earum.
+      %p Tempora nesciunt corporis molestiae quasi excepturi consectetur iusto recusandae nostrum obcaecati labore natus quibusdam autem ab. Sequi fugiat maiores consectetur ullam rem id eum blanditiis nostrum? Rerum laboriosam blanditiis voluptatibus.
+      %p Praesentium ipsum quidem soluta in quaerat excepturi consectetur sed ipsa sit optio magnam quibusdam laboriosam vitae molestiae nihil reiciendis similique iste minima accusantium repellendus quam rem quisquam ab animi nemo.
+      %p Exercitationem voluptatum error maxime officiis magni tempore laborum aliquam deserunt excepturi et doloribus accusamus corporis possimus officia ipsam veritatis voluptate animi tempora tenetur adipisci inventore rerum accusantium repellendus hic assumenda.
+      %p.random_state_prof
+        Врач дерматолог Иванова М. А.
+      %p.random_state_date
+        21.12.2013
+    .span_30.info_page_670.comments_block
+      .slider_outer
+        .slider
+          %ul#img_slider_inner
+            %li
+              %div
+                .random_state_img.no_margin
+                  %img{:alt => "", :src => "img/images/banner_l.jpg"}/
+            %li
+              %div
+                .random_state_img.no_margin
+                  %img{:alt => "", :src => "img/images/banner_r.jpg"}/
+            %li
+              %div
+                .random_state_img.no_margin
+                  %img{:alt => "", :src => "img/images/banner1.jpg"}/
+        .left_arr{:onclick => "window.myFlux.prev();"}
+          %i
+        .right_arr{:onclick => "window.myFlux.next();"}
+          %i
+      %h2.block_name.t_mini Комментарии к статье
+      %ul.message_box
+        %li
+          .mess_top
+            %span.pull-left Елена
+            %span.pull-right 21.02.2013
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque placeat itaque quae incidunt perferendis adipisci consectetur odit inventore sapiente nulla numquam hic. Ab nemo velit similique numquam quibusdam ut libero.
+        %li
+          .mess_top
+            %span.pull-left Елена
+            %span.pull-right 21.02.2013
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque placeat itaque quae incidunt perferendis adipisci consectetur odit inventore sapiente nulla numquam hic. Ab nemo velit similique numquam quibusdam ut libero.
+        %li
+          .mess_top
+            %span.pull-left Елена
+            %span.pull-right 21.02.2013
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque placeat itaque quae incidunt perferendis adipisci consectetur odit inventore sapiente nulla numquam hic. Ab nemo velit similique numquam quibusdam ut libero.
+        %li
+          .mess_top
+            %span.pull-left Елена
+            %span.pull-right 21.02.2013
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque placeat itaque quae incidunt perferendis adipisci consectetur odit inventore sapiente nulla numquam hic. Ab nemo velit similique numquam quibusdam ut libero.
+        %li
+          %form
+            .form_line.f_l_le
+              .l_i
+              .r_i
+              %input{:name => "name", :placeholder => "Ваша Имя", :type => "text", :value => ""}/
+            .form_line.f_l_ri
+              .l_i
+              .r_i
+              %input{:name => "name", :placeholder => "Ваш Email", :type => "text", :value => ""}/
+            .form_line
+              %textarea{:placeholder => "Комментарий"}
+            .form_line_action.short.pull-right
+              .l_i
+              .r_i
+              %input{:type => "submit", :value => "Отправить"}/

@@ -1,0 +1,29 @@
+%table.table
+  %tr
+    %th #
+    %th ФИО
+    %th Дополнительное описание
+    %th Специальность
+    %th Рабочий график
+    %th Удалить
+  - @doctors.each do |d|
+    %tr
+      %td
+        %a{href: "/admin/doctors/#{d.id}"}=d.id
+      %td= d.fio
+      %td= d.description
+      %td
+        - if d.speciality
+          = d.speciality.name
+      %td
+        - if d.worktime
+          %p= d.worktime.start_day.strftime("%H:%M")
+          %p= d.worktime.end_day.strftime("%H:%M")
+
+      %td
+        =link_to "Удалить", admin_doctor_path(d), :method => :delete, :class => "btn btn-danger", :confirm => "Вы уверены?"
+
+
+
+%a.btn{href: "/admin/doctors/new"} Добавить
+

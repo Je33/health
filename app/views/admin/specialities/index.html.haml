@@ -1,0 +1,17 @@
+%table.table
+  %tr
+    %th #
+    %th Специальность
+    %th Описание
+    %th Удалить
+
+  - @specialities.each do |t|
+    %tr
+      %td
+        %a{href: "/admin/specialities/#{t.id}"}=t.id
+      %td= t.name
+      %td= t.description
+      %td
+        =link_to "Удалить", admin_speciality_path(t), :method => :delete, :class => "btn btn-danger", :confirm => "Вы уверены?"
+
+%a.btn{href: "/admin/specialities/new"} Добавить

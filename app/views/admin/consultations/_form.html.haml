@@ -1,0 +1,30 @@
+= form_for [:admin, @consultation], :html => {:class => "form-horizontal"} do |f|
+  .control-group
+    %label.control-label ФИО
+    .controls
+      %button.btn.disabled{:disabled => true}= @consultation.client_fio
+
+  .control-group
+    %label.control-label Email
+    .controls
+      %button.btn.disabled{:disabled => true}= @consultation.client_email
+
+  .control-group
+    %label.control-label Доктор
+    .controls
+      -if @consultation.doctor
+        %button.btn.disabled{:disabled => true}= @consultation.doctor.fio
+
+  .control-group
+    %label.control-label Вопрос
+    .controls
+      .well= @consultation.question
+
+  .control-group
+    %label.control-label Овет
+    .controls
+      = f.text_area :response_message, :style => "width:100%"
+
+  .form-actions
+    = f.submit "Отправить", :class => "btn-success"
+    = link_to "назад",admin_consultations_path, :class => "btn"

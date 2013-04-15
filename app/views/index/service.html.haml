@@ -1,0 +1,28 @@
+
+.cont_bl
+  .span_100.cont_padding
+    %h2.block_name.big_block_name.pull-left
+      Наш медицинский центр
+      %br/
+      предлагает следующие услуги:
+    #sevice_finder.find_block.pull-right
+      %form#content_filter
+        .form_line
+          .l_i
+          .r_i
+          %input{:name => "name", :placeholder => "Поиск услуги", :type => "text", :value => ""}/
+        %input.magnifier{:type => "submit", :value => ""}/
+.cont_bl
+  -@specialities.includes(:services).each do |s|
+    .span_100.slide_block
+      %p.slide_block_name= s.name
+      %ul.hide
+        -s.services.each do |f|
+          %li
+            %a{:alt => "Добавить в карзину", :href => ""}
+              %img{:alt => "", :height => "21", :src => "img/trolley_mini.png", :width => "24"}/
+            %p
+              %span
+                #{f.cost} руб.
+              =f.name
+

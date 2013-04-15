@@ -1,0 +1,23 @@
+%table.table
+  %tr
+    %th #
+    %th Наименование
+    %th Описание
+    %th Стоимость
+    %th Удалить
+  - @service.each do |t|
+    %tr
+      %td
+        %a{href: "/admin/services/#{t.id}"}=t.id
+      %td= t.name
+      %td= t.description
+      %td= t.cost
+      %td
+        =link_to "Удалить", admin_service_path(t), :method => :delete, :class => "btn btn-danger", :confirm => "Вы уверены?"
+
+
+
+
+
+%a.btn{href: "/admin/services/new"} Добавить
+

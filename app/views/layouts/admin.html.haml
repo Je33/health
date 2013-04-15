@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title Health
+    = stylesheet_link_tag    "admin", :media => "all"
+    = javascript_include_tag "admin"
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{:href => "/"} Мед. центр
+          %ul.nav
+            %li{:class => params[:controller]=="admin/doctors"? "active" : ""}
+              %a{href: "/admin/doctors"} Доктора
+            %li{:class => params[:controller]=="admin/orders"? "active" : ""}
+              %a{href: "/admin/orders"} Заказы
+            %li{:class => params[:controller]=="admin/consultations"? "active" : ""}
+              %a{href: "/admin/consultations"} Консультация
+            %li{:class => params[:controller]=="admin/posts"? "active" : ""}
+              %a{href: "/admin/posts"} Новости
+            %li{:class => params[:controller]=="admin/worktimes"? "active" : ""}
+              %a{href: "/admin/worktimes"} Рабочий график
+            %li{:class => params[:controller]=="admin/specialities"? "active" : ""}
+              %a{href: "/admin/specialities"} Специальности
+            %li{:class => params[:controller]=="admin/articles"? "active" : ""}
+              %a{href: "/admin/articles"} Статьи
+            %li{:class => params[:controller]=="admin/services"? "active" : ""}
+              %a{href: "/admin/services"} Услуги
+    .container{:style => "margin-top:60px"}
+      = yield

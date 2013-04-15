@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %title Health
+    = stylesheet_link_tag    "public", :media => "all"
+    = csrf_meta_tags
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %meta{:content => "", :name => "keywords"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "width=1000, maximum-scale=1.0", :name => "viewport"}/
+    %script{:src => "/js/jquery.js", :type => "text/javascript"}
+    %script{:src => "/js/jquery.placeholder.min.js", :type => "text/javascript"}
+    %script{:src => "/js/flux.js", :type => "text/javascript"}
+    %script{:src => "/js/js.js", :type => "text/javascript"}
+  %body
+    #main
+      #top_0
+        %h1.pull-left.logo_text
+          %a{:href => "/"}
+            Медицинский центр
+            %span Здоровье
+        %a.pull-right.shopping_cart_img{:href => "javascript:;", :title => ""}
+          %p.pull-left.shopping_cart
+            Заказ на
+            %span 300
+            рублей
+          %img.pull-left{:alt => "", :height => "33", :src => "/img/shoping_card.png", :width => "38"}/
+      #menu
+        %a.pull-left{:href => "/about",:class => params[:action]=="about"? "active" : "", :title => ""} О нас
+        %a.pull-left{:href => "/service", :class => params[:action]=="service"? "active" : "", :title => ""} Услуги
+        %a.pull-left{:href => "/doctors", :class => params[:action]=="doctors"? "active" : "", :title => ""} Наши врачи
+        %a.pull-right.last-child{:href => "/contact", :class => params[:action]=="contact"? "active" : "", :title => ""} Контакты
+        %a.pull-right{:href => "/info", :class => params[:action]=="info"? "active" : "", :title => ""} Информация
+        %a.pull-right{:href => "/faq", :class => params[:action]=="faq"? "active" : "", :title => ""} Вопросы
+      #plus.logo
+        %a{:href => "/", :title => "Home"}
+      #content
+        = yield
+      .footer
+        ООО Здоровье +  © Copyright 2013
+      %script{:src => "/js/hs.js", :type => "text/javascript"}

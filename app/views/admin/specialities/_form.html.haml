@@ -1,0 +1,15 @@
+= form_for [:admin, @speciality], :html => {:class => "form-horizontal"} do |f|
+
+  .control-group
+    %label.control-label Cпециализации
+    .controls
+      = f.text_field :name
+
+  .control-group
+    %label.control-label Описание
+    .controls
+      = f.text_area :description, :style =>  "width:100%"
+
+  .form-actions
+    %input.btn.btn-success{:name => "save", :type => "submit", :value => "Сохранить"}
+    = link_to "назад",admin_specialities_path, :class => "btn"

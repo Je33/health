@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client_fio: MyString
+  client_email: MyString
+  client_phone: MyString
+  sum: MyString
+  report: 1
+
+two:
+  client_fio: MyString
+  client_email: MyString
+  client_phone: MyString
+  sum: MyString
+  report: 1

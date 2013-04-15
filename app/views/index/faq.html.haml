@@ -1,0 +1,32 @@
+.cont_bl
+  .span_100.no-bg.cont_padding
+    -@consultations.each do |s|
+      .span_70.info_page_670
+        .info_page_670
+          %h2.block_name Вопросы и ответы
+          .span_100.slide_block
+            %p.slide_block_name= s.question
+            %ul.hide
+              %li
+                %a{:alt => "", :href => "text.html"}
+                %p
+                  =s.response_message
+          .span_100.slide_block
+      .span_30.info_page_670
+        .slider.block_slider.right_block_info
+          %ul
+            %li
+              .info_page_670
+                %h2.block_name Случайная статья
+                %p.random_state_name
+                  Чистота - залог здоровья.
+                .random_state_img
+                  %img{:alt => "", :src => "img/images/banner_l.jpg"}/
+                %p.random_state_text
+                  Одним из наиболее используемых в современной медицине видов аппаратной диагностики является диагностика ультразвуком. Аппараты, позволяющие проводить этот метод исследования, вдиагностика ультразвуком. Аппараты, позволяющие проводить этот метод исследования, исключения, начиная с уже привычного отслеживанияисключения, начиная с уже  отслеживания нормального в гинекологической и заканчивая ультразвуковыми исследов...
+                  %a{:href => "text.html", :title => ""} Читать дальше
+                %p.random_state_prof
+                  Врач дерматолог Иванова М. А.
+                %p.random_state_date
+                  21.12.2013
+            %li

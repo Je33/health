@@ -1,0 +1,22 @@
+= form_for [:admin, @article], :html => {:class => "form-horizontal"} do |f|
+
+  .control-group
+    %label.control-label Название статьи
+    .controls
+      = f.text_field :name
+
+  .control-group
+    %label.control-label Описание
+    .controls
+      =f.text_area :description, :style => "width:100%"
+
+  .control-group
+    %label.control-label Описание
+    .controls
+      = f.select :doctor_id, options_for_select(Doctor.all.map{|s| [s.fio, s.id]}, @article.doctor_id)
+
+  .form-actions
+    %input.btn.btn-success{:name => "save", :type => "submit", :value => "Сохранить"}
+    = link_to "назад",admin_articles_path, :class => "btn"
+
+

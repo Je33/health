@@ -1,0 +1,63 @@
+.cont_bl
+  .span_100.cont_padding.doctor_top
+    %h2.block_name.big_block_name.pull-left
+      В нашем медицинском центре
+      %br/
+      работают только квалифицированные
+      %br/
+      специалисты имеющие все сертификаты
+    .top1
+  .doctor_select
+    %form
+      .form_line
+        .l_i
+        .r_i
+        %select
+          %option{:value => "Специалист"}
+            Специалист
+          %option{:value => "1"}
+            1
+          %option{:value => "2"}
+            2
+          %option{:value => "3"}
+            3
+          %option{:value => "4"}
+            4
+          %option{:value => "5"}
+            5
+          %option{:value => "6"}
+            6
+  .doctors
+    -@specialities.includes(:doctors).each do |s|
+      .span_33
+        .front
+          %h2.block_name= s.name
+          %p
+            = s.description
+        .back
+          .slider.block_slider_doctor
+            %ul
+              -s.doctors.each do |f|
+                %li
+                  .doctor_img
+                    %img{:alt => "", :src => f.photo.url}/
+                  .doctor_text_box
+                    .doctor_proff.pull-left
+                      = s.name
+                    %a.doctor_write{:href => "javascript:;"}
+                    .form_line_action.short
+                      .l_i
+                      .r_i
+                      %input{:type => "submit", :value => "Записаться"}/
+                    .clear
+                    .sl_doctor_name
+                      %a{:href => "javascript:;", :title => ""}
+                        = f.fio
+                    .clear
+                    %p.doctor_text
+                      = f.description
+                    .clear
+                    %a.doctor_st.pull-left{:href => "text.html", :title => ""}
+                      Статьи
+                    %a.doctor_st.pull-right.slide_back{:href => "javascript:;", :title => ""}
+                      Закрыть

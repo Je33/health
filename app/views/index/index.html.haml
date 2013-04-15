@@ -1,0 +1,175 @@
+.cont_bl
+  .span_20
+    %h2.clear_block_name Все виды анализов
+    %img{:alt => "", :height => "163", :src => "/img/images/banner_l.jpg", :width => "236"}/
+  .span_60
+    .slider
+      %ul#img_slider
+        %li
+          %img{:alt => "", :height => "400", :src => "/img/images/banner1.jpg", :width => "478"}/
+        %li
+          %img{:alt => "", :height => "400", :src => "/img/images/banner1.jpg", :width => "478"}/
+        %li
+          %img{:alt => "", :height => "400", :src => "/img/images/banner1.jpg", :width => "478"}/
+        %li
+          %img{:alt => "", :height => "400", :src => "/img/images/banner1.jpg", :width => "478"}/
+    .left_arr{:onclick => "window.myFlux.prev();"}
+      %i
+    .right_arr{:onclick => "window.myFlux.next();"}
+      %i
+  .span_20
+    %h2.clear_block_name Все виды анализов
+    %img{:alt => "", :height => "240", :src => "/img/images/banner_r.jpg", :width => "239"}/
+.cont_bl
+  .span_70
+    %h2.block_name Новости
+    -@posts.each do |s|
+      .text_block_dott
+        %a.text_name{:href => "text.html", :title => ""}
+          =s.name
+        %p.text_text
+          =s.description
+        %p.text_date
+          =s.created_at.strftime("%d.%m.%Y")
+        .text_dott
+  .span_30
+    %h2.block_name Новые статьи от наших врачей
+    -@articles.includes(:doctor).each do |s|
+      .text_block_dott
+        %a.text_name{:href => "text.html", :title => ""}
+          =s.name
+        %a.doctor_name{:href => "text.html", :title => ""}
+          -if s.doctor.speciality
+            =s.doctor.speciality.name
+          -else
+            ""
+          -if s.doctor
+            =s.doctor.fio
+          -else
+            ""
+        %p.text_date
+          =s.created_at.strftime("%d.%m.%Y")
+        .text_dott
+.cont_bl
+  .span_50.s5l
+    %h2.block_name Узнать результаты анализов
+    %form
+      .form_line
+        .l_i
+        .r_i
+        %input{:name => "name", :placeholder => "Ваша фамилия", :type => "text", :value => ""}/
+      .form_line
+        .l_i
+        .r_i
+        %input{:name => "an_id", :placeholder => "Номер анализа", :type => "text", :value => ""}/
+      .form_line_action.short.pull-right
+        .l_i
+        .r_i
+        %input{:type => "submit", :value => "Получить"}/
+  .span_50
+    %h2.block_name Записаться на приём к врачу
+    %form{:action => "/order"}
+      .form_line
+        .l_i
+        .r_i
+        %input{:name => "name", :placeholder => "Ваша фамилия", :type => "text", :value => ""}/
+      .form_line
+        .l_i
+        .r_i
+        %select
+          -@specialities.each do |s|
+            %option{:value => "Спецмализация"}
+              =s.name
+
+      .form_line.pull-left.w_65
+        .l_i
+        .r_i
+        %input{:name => "phone", :placeholder => "Ваш телефон для обратной связи", :type => "text", :value => ""}/
+      .form_line_action.short.pull-right
+        .l_i
+        .r_i
+        %input{:type => "submit", :value => "Записаться"}/
+.cont_bl
+  .span_100
+    .span_55
+      %h2.block_name Консультация специалиста
+      %form
+        .form_line
+          .l_i
+          .r_i
+          %input{:name => "client_fio", :placeholder => "Ваше имя", :type => "text", :value => ""}/
+        .form_line
+          .l_i
+          .r_i
+          %input{:name => "an_id", :placeholder => "Ваш Email для ответа", :type => "text", :value => ""}/
+        .form_line
+          %textarea{:placeholder => "Ваш вопрос"}
+        .form_line_action.short.pull-right
+          .l_i
+          .r_i
+          %input{:type => "submit", :value => "Отправить"}/
+    .span_65
+      .slider.block_slider
+        %ul
+          - @doctors.each do |d|
+            %li
+              .ll
+                = image_tag d.photo.path
+                %img{:alt => "", :height => "367", :src => "/img/images/banner1.jpg", :width => "244"}/
+              .rr
+                .block_name= d.fio
+                .block_work
+                  Старший
+                  %br/
+                  врач-гинеколог
+                .block_doctor_name
+                  МАРКОВА
+                  %br/
+                  ЕЛЕНА ВИКТОРОВНА
+                .block_doctor_text Небольшой текст о враче, например о его достяжениях, опыте работы квалификации, образовании и так далее.
+          %li
+            .ll
+              %img{:alt => "", :height => "367", :src => "/img/images/banner1.jpg", :width => "244"}/
+            .rr
+              .block_name Прием ведет
+              .block_work
+                Старший
+                %br/
+                врач-гинеколог
+              .block_doctor_name
+                МАРКОВА
+                %br/
+                ЕЛЕНА ВИКТОРОВНА 1
+              .block_doctor_text Небольшой текст о враче, например о его достяжениях, опыте работы квалификации, образовании и так далее.
+          %li
+            .ll
+              %img{:alt => "", :height => "367", :src => "/img/images/banner1.jpg", :width => "244"}/
+            .rr
+              .block_name Прием ведет
+              .block_work
+                Старший
+                %br/
+                врач-гинеколог
+              .block_doctor_name
+                МАРКОВА
+                %br/
+                ЕЛЕНА ВИКТОРОВНА 2
+              .block_doctor_text Небольшой текст о враче, например о его достяжениях, опыте работы квалификации, образовании и так далее.
+          %li
+            .ll
+              %img{:alt => "", :height => "367", :src => "/img/images/banner1.jpg", :width => "244"}/
+            .rr
+              .block_name Прием ведет
+              .block_work
+                Старший
+                %br/
+                врач-гинеколог
+              .block_doctor_name
+                МАРКОВА
+                %br/
+                ЕЛЕНА ВИКТОРОВНА 3
+              .block_doctor_text Небольшой текст о враче, например о его достяжениях, опыте работы квалификации, образовании и так далее.
+      .left_arr{:onclick => "window.slide('prev');"}
+        %i
+      .right_arr{:onclick => "window.slide('next');"}
+        %i

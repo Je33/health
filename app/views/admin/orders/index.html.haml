@@ -1,0 +1,19 @@
+%table.table
+  %tr
+    %th #
+    %th ФИО
+    %th email
+    %th Телефон
+    %th Сумма заказа
+    %th Удалить
+  - @orders.each do |s|
+    %tr
+      %td
+        %a.btn{href: "/admin/orders/#{s.id}"}=s.id
+      %td= s.client_fio
+      %td= s.client_fio
+      %td= s.client_phone
+      %td= s.sum
+      %td
+        =link_to "Удалить", admin_order_path(s), :method => :delete, :class => "btn btn-danger", :confirm => "Вы уверены?"
+

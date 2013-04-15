@@ -1,0 +1,40 @@
+.cont_bl
+  .span_100.order_box
+    .span_30
+      %h2.block_name Записаться на прием к врачу
+      %form#send_order_form
+        .form_line
+          .l_i
+          .r_i
+          %input.hid_pole{:name => "name", :placeholder => "Ваша фамилия", :type => "text", :value => params[:name]}/
+        .form_line
+          .l_i
+          .r_i
+          %input.hid_pole{:name => "phone", :placeholder => "Номер телефона для связи", :type => "text", :value => params[:phone]}/
+        .form_line
+          .l_i
+          .r_i
+          %select#category
+            %option{"data-id" => "none", :value => "none"}
+              Категория
+        .form_line
+          .l_i
+          .r_i
+          %select#specialist
+            %option{"data-id" => "none", :value => "none"}
+              Специалист
+        %span.form_help_text * Все поля обязательны для заполнения
+        #datepicker
+        .error_order.hide
+          Пожалуйста, заполните все поля и выберите специалиста из списка. Потом выберите удобный для вас день и время записи.
+        .form_line_action.long.pull-right
+          .l_i
+          .r_i
+          %input.hid_pole{:name => "spec_inp", :type => "hidden", :value => ""}/
+          %input.hid_pole{:name => "doctor_inp", :type => "hidden", :value => ""}/
+          %input.hid_pole{:name => "date_inp", :type => "hidden", :value => ""}/
+          %input.hid_pole{:name => "time_inp", :type => "hidden", :value => ""}/
+          %input.subm_btn{:type => "submit", :value => "Записаться"}/
+    .span_70.info_page_670
+      %h2.block_name.text_align_right Пожалуйста, выберите время записи
+      %ul.time_box
